@@ -1,6 +1,5 @@
 import { useEffect, useId, useRef, useState } from "react";
 import { Pause, Play } from "lucide-react";
-import CityTraffic from "./CityTraffic.jsx";
 import "./workspace-scene.css";
 
 export default function WorkspaceScene() {
@@ -74,10 +73,7 @@ export default function WorkspaceScene() {
           alt="A wide illustrated neon city surrounding a central penthouse, with a developer at a laptop, a sleeping orange kitten, and small sidewalk pedestrians."
         />
         {imageState === "ready" && (
-          <>
-            <div className="workspace-laptop-glow" aria-hidden="true" />
-            <CityTraffic sceneId={sceneId} />
-          </>
+          <div className="workspace-laptop-glow" aria-hidden="true" />
         )}
         {imageState === "loading" && (
           <p className="workspace-image-status" role="status">Loading workspace illustration…</p>
@@ -94,7 +90,7 @@ export default function WorkspaceScene() {
           onClick={() => setAnimationPaused((value) => !value)}
           disabled={reducedMotion || imageState !== "ready"}
           aria-pressed={animationPaused || reducedMotion}
-          aria-label={reducedMotion ? "City motion disabled by your reduced motion setting" : animationPaused ? "Resume passing traffic and laptop glow" : "Pause passing traffic and laptop glow"}
+          aria-label={reducedMotion ? "Laptop glow disabled by your reduced motion setting" : animationPaused ? "Resume laptop glow" : "Pause laptop glow"}
           title={reducedMotion ? "Your reduced motion preference keeps this illustration still." : imageState !== "ready" ? "Motion is available when the illustration has loaded." : motionLabel}
         >
           {animationPaused || reducedMotion ? <Play size={14} aria-hidden="true" /> : <Pause size={14} aria-hidden="true" />}

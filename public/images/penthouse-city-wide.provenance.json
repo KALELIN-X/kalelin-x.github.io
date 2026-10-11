@@ -25,10 +25,10 @@
       "Broader car-free street segments and intersections",
       "Tiny street-level sidewalk pedestrians"
     ],
-    "notes": "The penthouse remains the central focal point. Tiny pedestrians are static details baked into the illustration. Streets are car-free for separate animated traffic. Road coordinates below are visual estimates and must be verified against actual moving vehicles; occlusion matters around neighboring buildings."
+    "notes": "The penthouse remains the central focal point. Tiny pedestrians are static details baked into the illustration. Streets are car-free. The earlier animated traffic overlay was removed because its estimated masks did not match foreground buildings reliably."
   },
   "coordinates": {
-    "coordinate_system": "Image pixels, origin at upper left; estimates from visual inspection, not exact masks",
+    "coordinate_system": "Image pixels, origin at upper left; visual estimate used only for the laptop glow",
     "laptop_screen_polygon": [
       [
         654,
@@ -46,62 +46,6 @@
         664,
         370
       ]
-    ],
-    "traffic_road_guidance": [
-      {
-        "area": "Left foreground road",
-        "description": "Broad diagonal northwest-to-southeast road on the left, with clear lanes and two visible crosswalks.",
-        "visible_lane_segment_estimates": [
-          {
-            "from": [
-              -12,
-              348
-            ],
-            "to": [
-              515,
-              898
-            ]
-          },
-          {
-            "from": [
-              456,
-              898
-            ],
-            "to": [
-              -12,
-              409
-            ]
-          }
-        ],
-        "approximate_angle_degrees": 46.5
-      },
-      {
-        "area": "Right road",
-        "description": "Diagonal southwest-to-northeast street visible at right edge, especially the short section beside the lower-right crosswalk. Neighboring buildings obscure portions farther southwest.",
-        "visible_lane_segment_estimates": [
-          {
-            "from": [
-              1530,
-              681
-            ],
-            "to": [
-              1788,
-              480
-            ]
-          },
-          {
-            "from": [
-              1790,
-              529
-            ],
-            "to": [
-              1548,
-              718
-            ]
-          }
-        ],
-        "approximate_angle_degrees": -38
-      }
     ]
   }
 }
