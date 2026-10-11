@@ -19,6 +19,7 @@ Open http://127.0.0.1:5173/. The development server listens only on the local co
 
 ```sh
 npm run check:content
+npm test
 npm run build
 npm run preview
 ```
@@ -53,14 +54,16 @@ This portfolio has **no application backend or database to maintain**. Content c
 
 - `src/App.jsx`: compact page layout, navigation, project illustrations, accessible native dialogs, experience, and résumé presentation.
 - `src/content.js`: exposes JSON content and derives the featured role from its ID.
-- `src/components/WorkspaceScene.jsx`: approved penthouse illustration, ambient SVG traffic, laptop glow, loading/error handling, and pause/resume control.
+- `src/components/WorkspaceScene.jsx`: panoramic penthouse illustration, ambient traffic, laptop glow, loading/error handling, and pause/resume control.
 - `src/components/workspace-scene.css`: scene styling and reduced-motion behavior.
-- `public/images/penthouse-workspace.png`: locally served generated illustration; its exact source prompt and provenance are in the adjacent JSON file.
+- `src/components/CityTraffic.jsx` and `city-traffic.css`: projected SVG vehicles and ambient street motion.
+- `src/components/city-traffic-geometry.js`: vehicle projection and street/lane coordinates for the panorama; adjacent native Node tests check projection and route bounds.
+- `public/images/penthouse-city-wide.png`: locally served generated illustration; its exact source prompt and provenance are in the adjacent JSON file.
 - `scripts/check-content.mjs`: content validation before production builds.
 
-The centerpiece shows a penthouse from a diagonal aerial view, with a developer seated at a larger laptop and an orange kitten curled asleep in its cushion. Both are static parts of the illustration. Four small original SVG cars pass along the surrounding streets, and a faint screen glow pulses within the laptop display. These are ambient presentation effects, not a traffic simulation or live AI system.
+The centerpiece shows a penthouse from a diagonal aerial view, with a developer seated at a larger laptop and an orange kitten curled asleep in its cushion. The expanded city includes small sidewalk pedestrians. All people and the kitten are static parts of the illustration. Six small SVG cars pass in opposing lanes along the surrounding streets, and a faint screen glow pulses within the laptop display. Cars use projected body faces, cabins, wheels, ground shadows and restrained lights, with their vertical height kept upright for the aerial perspective. Street masks prevent drawing over neighboring buildings. These are ambient presentation effects, not a traffic simulation or live AI system.
 
-Visitors can pause/resume the traffic and glow. Motion also pauses when the scene is offscreen or the document is hidden. Reduced-motion preferences hide traffic and keep the glow still. The full 3:2 artwork remains visible without cropping or pixelated rendering. A failed image load displays a readable message while the rest of the portfolio remains usable. The scene is labeled **Neon penthouse · illustrated** and has descriptive alternative text. There is no autoplay audio.
+Visitors can pause/resume the traffic and glow. Motion also pauses when the scene is offscreen or the document is hidden. Reduced-motion preferences hide traffic and keep the glow still. The full 2:1 artwork remains visible without cropping or pixelated rendering, extending beyond the text column up to 1440px on wider screens. Mobile keeps the scene within the page gutters. A failed image load displays a readable message while the rest of the portfolio remains usable. The scene is labeled **Neon penthouse · illustrated** and has descriptive alternative text. There is no autoplay audio.
 
 Visitors can skip directly to the projects. Project details open in dialogs that support Escape and restore focus to their trigger. **View résumé → Print / save PDF** uses the browser print dialog with a résumé-only layout. Saving a PDF is a browser operation; the original source PDF is not copied or exposed by this application.
 
@@ -74,9 +77,9 @@ CommentScope is the newly rebuilt comment-analysis application in the existing `
 
 UltimateGameGen was reconstructed from retained coursework documentation; its original coursework source was not recovered. The new implementation uses HTML/CSS/JavaScript with a Node/Express backend, bounded Steam queries, and a demo library. The portfolio itself uses React.
 
-Project artwork is clearly labeled **illustrated previews** rather than screenshots or measured results and is drawn with CSS/SVG. The approved penthouse illustration was generated and refined with the built-in image-generation tool on October 11, 2026, following the owner's selected concept and room reference. The reference itself is not distributed. The scene is conceptual artwork, not a portrait of Kai, a photograph of his room, or proof of running agents. The developer and kitten are embedded in the artwork; no separate person or animal sprite is used. The black laptop and subdued green keyboard lighting are Razer-inspired; no sponsorship or affiliation is implied. The exact final prompt is recorded in `public/images/penthouse-workspace.provenance.json`. Traffic vehicle shapes and motion are original SVG/CSS. UI icons use Lucide, and the locally bundled font is DM Sans through Fontsource.
+Project artwork is clearly labeled **illustrated previews** rather than screenshots or measured results and is drawn with CSS/SVG. The approved penthouse illustration was generated and refined with the built-in image-generation tool on October 11, 2026, following the owner's selected concept and room reference. The reference itself is not distributed. The scene is conceptual artwork, not a portrait of Kai, a photograph of his room, or proof of running agents. The developer and kitten are embedded in the artwork; no separate person or animal sprite is used. The black laptop and subdued green keyboard lighting are Razer-inspired; no sponsorship or affiliation is implied. The exact final prompt is recorded in `public/images/penthouse-city-wide.provenance.json`. Traffic vehicle shapes and motion are original projected SVG/CSS. A later revision widened the city to 2:1 and introduced tiny static sidewalk pedestrians. UI icons use Lucide, and the locally bundled font is DM Sans through Fontsource.
 
-Content validation and the production build are automated in CI. Browser checks cover desktop/mobile layout, ambient motion and pause, dialog dismissal, navigation, keyboard focus, and résumé print styles. This site is a portfolio presentation: linked projects run separately, and the illustrated dashboard is not an embedded prediction service.
+Content validation, native traffic geometry tests, and the production build are automated in CI. Browser checks cover desktop/mobile layout, ambient motion and pause, dialog dismissal, navigation, keyboard focus, and résumé print styles. This site is a portfolio presentation: linked projects run separately, and the illustrated dashboard is not an embedded prediction service.
 
 ## Design revision
 

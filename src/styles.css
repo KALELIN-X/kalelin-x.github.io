@@ -43,7 +43,13 @@ section[id] { scroll-margin-top: 28px; }
 h1 { font-size: clamp(30px, 3.7vw, 42px); line-height: 1.2; }
 h1 span { color: var(--accent); display: inline-block; }
 .hero-role { margin-top: 11px; font-size: 13px; color: #bec6d2; line-height: 1.7; }
-.hero > .workspace-scene { width: min(900px, 100%); margin: auto; }
+.hero > .workspace-scene {
+  width: min(1440px, calc(100vw - 64px));
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+}
 .hero-intro { width: min(900px, 100%); margin: 18px auto 0; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
 .hero-intro > p { max-width: 430px; font-size: 14px; line-height: 1.7; color: var(--muted); }
 .hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; flex-shrink: 0; }
@@ -395,6 +401,7 @@ h2 { font-size: 29px; line-height: 1.22; }
 }
 @media (max-width: 720px) {
   .site-shell { width: calc(100% - 40px); }
+  .hero > .workspace-scene { width: 100%; }
   .site-header { flex-wrap: wrap; justify-content: center; gap: 8px; padding: 17px 0 9px; }
   .header-brand { width: 100%; justify-content: space-between; gap: 16px; }
   .header-socials { gap: 12px; font-size: 11px; }
