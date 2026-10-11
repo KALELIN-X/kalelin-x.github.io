@@ -63,14 +63,14 @@ export default function WorkspaceScene() {
         <img
           ref={imageRef}
           className="workspace-image"
-          src={`${import.meta.env.BASE_URL}images/penthouse-city-clean.png`}
+          src={`${import.meta.env.BASE_URL}images/penthouse-future-skyline.png`}
           width="1774"
           height="887"
           fetchPriority="high"
           decoding="async"
           onLoad={() => setImageState("ready")}
           onError={() => setImageState("error")}
-          alt="A wide illustrated neon city with mechanical rooftops and street-level trees, surrounding a warm penthouse with a developer at a laptop and a sleeping orange kitten."
+          alt="A warm penthouse with a developer at a laptop and a sleeping orange kitten, overlooking a layered futuristic city and distant waterfront skyline with restrained cyan lights."
         />
         {imageState === "ready" && (
           <div className="workspace-laptop-glow" aria-hidden="true" />

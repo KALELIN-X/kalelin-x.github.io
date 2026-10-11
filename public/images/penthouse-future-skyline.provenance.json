@@ -1,0 +1,49 @@
+{
+  "asset": "penthouse-future-skyline.png",
+  "title": "B — Future Skyline",
+  "purpose": "Selected B variant integrated into the public portfolio on 2026-10-11.",
+  "mode": "built-in image_gen",
+  "edit_target": "public/images/penthouse-city-clean.png at commit ef2fe2829ba722a9ad0f74d28c4447e4792da71b",
+  "dimensions": {
+    "width": 1774,
+    "height": 887,
+    "aspect_ratio": "2:1"
+  },
+  "prompt_set": [
+    {
+      "stage": "Create futuristic skyline variant",
+      "prompt": "Use case: precise-object-edit.\nAsset type: preview-only 2:1 panoramic portfolio centerpiece illustration, one image.\nInput image: this supplied image is the EDIT TARGET, not merely a style reference.\nPrimary request: create a variant called Future Skyline: make the same central penthouse tower about 20-25% smaller within the composition and reveal a much more layered, restrained futuristic city behind it. Preserve the central foreground tower and the warm room's identity exactly as far as possible: tall enclosing walls, glass railing, seated developer at the large laptop, bed, bookcase, lounge chair, rug, coffee table, and tiny orange kitten curled on its cushion. Keep a few intentional potted plants indoors only.\nComposition: retain a broad elevated three-quarter aerial camera with the familiar diagonal city geometry and room cutaway. Pull back and tilt very slightly toward the distance to reveal a narrow hazy far horizon across the top. Do not turn this into a side-view, and do not shrink the room so much that it ceases to be the focal point. Tower centered in front; room readable.\nBackdrop depth: clearly distinguish nearby lower dark blocks, middle modern towers of varied height with plausible setbacks, and a far skyline of slender taller glass-and-metal buildings that diminish into cool atmospheric haze. Make structural silhouettes refined and varied rather than an endless repeated grid of identical blocks. Plausible continuous streets and grounded buildings. Distant structures lower contrast, less detailed and dimmer than foreground.\nLighting: keep the penthouse warmly lit and clear. Strongly reduce the existing visual clutter of golden streetlights and rows of glowing orange windows. Background windows sparse and soft, no many continuous bright window bands. Futuristic detail comes from clean architecture, fine cyan edge or utility accents, and subtle glass reflections. Remove broad luminous magenta wall panels and large cyan LED slabs. Restrained neon, not an overpowered cyberpunk light show. Deep navy, steel blue and cool soft haze with a warm room as visual anchor.\nVegetation: only 3-5 small street-level tree beds visible across the whole image, no continuous tree-lined streets. No rooftop vegetation, no gardens or trees growing on rooftops. Every surrounding roof is an ordinary dark roof with a plausible parapet and modest grounded vents or HVAC units.\nStyle: crisp polished illustrated architectural concept art, consistent with the original accepted scene; refined edges and shapes, not a photograph, not actual human portraiture, not chunky pixel art. High-quality clean 2:1 panorama with no labels or collage.\nAvoid: cars or other vehicles, exterior people, standing figures, extra animals, drones, flying props, floating buildings, impossible roads over roofs, trees on roofs, huge neon signs, bright magenta slabs, text, logos, watermarks. The seated worker and orange kitten remain integrated into the room."
+    },
+    {
+      "stage": "Reduce exterior vegetation",
+      "prompt": "Use case: precise-object-edit. The supplied image is the edit target.\nMake ONLY a vegetation reduction pass. Preserve this exact Future Skyline composition, 2:1 dimensions, central warm room and central tower size/placement, seated laptop worker, sleeping orange kitten, indoor potted plants, furniture, roofs, modern skyline silhouettes, river, distant haze, roads, camera, palette and lighting.\nThere are too many exterior street tree clusters. Remove all exterior foliage except FOUR small tree beds total: one unobtrusive small bed along the far-left foreground sidewalk, one small bed at the lower-left diagonal street, one small bed beside the right-middle street and one at lower-right. Each is a tiny isolated planted sidewalk bed clearly on ground level. Replace every other exterior tree bed and tree with normal pavement/ground surfaces and unobtrusive urban utility details. No vegetation anywhere on roofs. All surrounding roofs remain plain roof surfaces, vents, HVAC and parapets.\nDo not add any objects or change building silhouettes. No cars, exterior people, extra animals, bright neon panels, labels, text or watermarks. Keep the foreground warm room as focal point and preserve the calm cool futuristic background with layered depth."
+    }
+  ],
+  "inspection": {
+    "composition": "Central warm penthouse remains clearly readable at a smaller foreground size with a distant hazy horizon, layered near/middle/far skyline and restrained cyan architectural accents.",
+    "preserved": "Seated laptop worker, bed, books, lounge, rug, curled orange kitten, tall walls and glass railing.",
+    "vegetation": "About five very small isolated ground-level tree beds; indoor plants preserved; no rooftop greenery observed.",
+    "issues": "No major problems observed. This is a preview concept, not a dimensionally engineered city model."
+  },
+  "coordinates": {
+    "laptop_screen_polygon": [
+      [
+        719,
+        446
+      ],
+      [
+        739,
+        438
+      ],
+      [
+        743,
+        453
+      ],
+      [
+        726,
+        462
+      ]
+    ],
+    "coordinate_system": "1774x887 image pixels, origin at upper left; visually inspected inset polygon"
+  }
+}
