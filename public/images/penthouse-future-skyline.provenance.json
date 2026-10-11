@@ -24,26 +24,5 @@
     "preserved": "Seated laptop worker, bed, books, lounge, rug, curled orange kitten, tall walls and glass railing.",
     "vegetation": "About five very small isolated ground-level tree beds; indoor plants preserved; no rooftop greenery observed.",
     "issues": "No major problems observed. This is a preview concept, not a dimensionally engineered city model."
-  },
-  "coordinates": {
-    "laptop_screen_polygon": [
-      [
-        719,
-        446
-      ],
-      [
-        739,
-        438
-      ],
-      [
-        743,
-        453
-      ],
-      [
-        726,
-        462
-      ]
-    ],
-    "coordinate_system": "1774x887 image pixels, origin at upper left; visually inspected inset polygon"
   }
 }
