@@ -1,0 +1,191 @@
+.workspace-scene {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  color: #c9d0d8;
+}
+
+.workspace-image-wrap {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 3 / 2;
+  border: 1px solid rgb(255 255 255 / 9%);
+  border-radius: 18px;
+  background: #090b10;
+  box-shadow: 0 22px 60px rgb(0 0 0 / 24%);
+}
+
+.workspace-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  image-rendering: auto;
+}
+
+.workspace-scene--error .workspace-image { visibility: hidden; }
+
+.workspace-image-status {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  margin: 0;
+  padding: 24px;
+  background: #10151e;
+  color: #bec8d7;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.workspace-laptop-glow,
+.workspace-traffic {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.workspace-laptop-glow {
+  z-index: 1;
+  background: #76c9f2;
+  clip-path: polygon(27.86% 35.84%, 31.58% 32.91%, 32.23% 37.5%, 28.65% 40.04%);
+  mix-blend-mode: screen;
+  opacity: 0.04;
+  animation: workspace-screen-glow 5.6s ease-in-out infinite;
+}
+
+.workspace-traffic { z-index: 2; }
+
+.workspace-traffic-car {
+  transform-box: view-box;
+  transform-origin: 0 0;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+
+.workspace-traffic-left-out {
+  --car-color: #828da2;
+  animation-name: workspace-traffic-left-out;
+  animation-duration: 14s;
+  animation-delay: -3s;
+}
+
+.workspace-traffic-left-in {
+  --car-color: #d2cbd1;
+  animation-name: workspace-traffic-left-in;
+  animation-duration: 17s;
+  animation-delay: -10s;
+}
+
+.workspace-traffic-right-out {
+  --car-color: #737d8e;
+  animation-name: workspace-traffic-right-out;
+  animation-duration: 15s;
+  animation-delay: -8s;
+}
+
+.workspace-traffic-right-in {
+  --car-color: #c2c7d1;
+  animation-name: workspace-traffic-right-in;
+  animation-duration: 19s;
+  animation-delay: -1s;
+}
+
+.workspace-scene--paused .workspace-laptop-glow,
+.workspace-scene--paused .workspace-traffic-car { animation-play-state: paused; }
+
+.workspace-scene--reduced .workspace-traffic { display: none; }
+.workspace-scene--reduced .workspace-laptop-glow { animation: none; opacity: 0.04; }
+
+.workspace-caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2px 16px;
+  padding: 4px 2px 0;
+  color: #9ca8b8;
+  font-size: 11px;
+  line-height: 1.7;
+  letter-spacing: 0.025em;
+}
+
+.workspace-animation-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: #b5bfd0;
+  font: inherit;
+  font-size: 11px;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+.workspace-animation-button:hover:not(:disabled) {
+  background: rgb(181 245 107 / 7%);
+  color: #b5f56b;
+}
+
+.workspace-animation-button:focus-visible { outline: 2px solid #b5f56b; outline-offset: 2px; }
+.workspace-animation-button:disabled { color: #8793a4; cursor: default; }
+
+@keyframes workspace-screen-glow {
+  0%, 100% { opacity: 0.04; }
+  50% { opacity: 0.13; }
+}
+
+/* Sparse opposing lanes follow the streets in the accepted artwork.
+   Each vehicle fades beyond a street edge before its next pass. */
+@keyframes workspace-traffic-left-out {
+  0% { transform: translate(-22px, 705px) rotate(-34.8deg); opacity: 0; }
+  6% { opacity: 1; }
+  89% { opacity: 1; }
+  96%, 100% { opacity: 0; }
+  100% { transform: translate(225px, 534px) rotate(-34.8deg); }
+}
+
+@keyframes workspace-traffic-left-in {
+  0% { transform: translate(231px, 509px) rotate(145.2deg); opacity: 0; }
+  6% { opacity: 1; }
+  90% { opacity: 1; }
+  98%, 100% { opacity: 0; }
+  100% { transform: translate(-28px, 689px) rotate(145.2deg); }
+}
+
+@keyframes workspace-traffic-right-out {
+  0% { transform: translate(1258px, 542px) rotate(35.6deg); opacity: 0; }
+  7% { opacity: 1; }
+  84% { opacity: 1; }
+  94%, 100% { opacity: 0; }
+  100% { transform: translate(1514px, 724px) rotate(35.6deg); }
+}
+
+@keyframes workspace-traffic-right-in {
+  0% { transform: translate(1507px, 746px) rotate(216.7deg); opacity: 0; }
+  8% { opacity: 1; }
+  89% { opacity: 1; }
+  97%, 100% { opacity: 0; }
+  100% { transform: translate(1268px, 568px) rotate(216.7deg); }
+}
+
+@media (max-width: 480px) {
+  .workspace-image-wrap { border-radius: 12px; }
+  .workspace-caption { font-size: 10px; gap: 2px 8px; }
+  .workspace-animation-button { font-size: 10px; padding-inline: 7px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .workspace-traffic { display: none; }
+  .workspace-laptop-glow { animation: none; opacity: 0.04; }
+}

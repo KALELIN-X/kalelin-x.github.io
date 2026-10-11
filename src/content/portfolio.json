@@ -1,0 +1,100 @@
+{
+  "profile": {
+    "name": "Kai Lin",
+    "github": "https://github.com/KALELIN-X",
+    "linkedin": "https://www.linkedin.com/in/kai-lin-a0b918202",
+    "primaryExperienceId": "jpmorgan"
+  },
+  "experience": [
+    {
+      "id": "jpmorgan",
+      "role": "Software Engineer",
+      "employer": "JPMorgan Chase",
+      "date": "February 2026 — present",
+      "current": true,
+      "summary": "Building reliable applications and the systems behind them.",
+      "responsibilities": [
+        "Build Java and Spring Boot backend components and improve REST API error handling.",
+        "Contribute to AWS and Terraform infrastructure and internal workflow automation."
+      ],
+      "tags": ["Java", "Spring Boot", "REST APIs", "AWS", "Terraform"]
+    },
+    {
+      "id": "handshake",
+      "role": "AI Model Evaluator",
+      "employer": "Handshake AI",
+      "date": "December 2025 — present",
+      "current": true,
+      "summary": "Turning model behavior into clear, testable questions.",
+      "responsibilities": [
+        "Design and evaluate LLM benchmark tasks and strengthen verification tests.",
+        "Refine task specifications using automated agent trial results, across systems infrastructure, distributed storage, and formal reasoning."
+      ],
+      "tags": ["LLM evaluation", "Verification", "Task design"]
+    }
+  ],
+  "education": [
+    {
+      "id": "umass",
+      "institution": "University of Massachusetts Amherst",
+      "degree": "B.S. in Computer Science",
+      "date": "September 2020 — July 2024",
+      "status": "Completed",
+      "chapter": "The foundation",
+      "shortDescription": "B.S. Computer Science · UMass Amherst, 2024"
+    },
+    {
+      "id": "gatech",
+      "institution": "Georgia Institute of Technology",
+      "degree": "M.S. in Computer Science",
+      "date": "January 2027",
+      "status": "Incoming",
+      "chapter": "The next chapter",
+      "shortDescription": "Incoming M.S. Computer Science · Georgia Tech, January 2027"
+    }
+  ],
+  "projects": [
+    {
+      "id": "commentscope",
+      "number": "01",
+      "title": "CommentScope",
+      "category": "Machine learning · Project reconstruction",
+      "summary": "Making a comment section a little easier to understand.",
+      "description": "Evaluate a sentence or a collection of comments, then explore the balance of positive, neutral, and negative sentiment.",
+      "tags": ["Python", "PyTorch", "FastAPI", "Streamlit"],
+      "url": "https://github.com/KALELIN-X/Pytorch-Bert-Pos-Neg-comment-detection",
+      "question": "How can a comment-analysis project become something you can run, test, and explain?",
+      "approach": "The reconstruction restores a runnable API and dashboard, adds text and batch validation, and makes sentiment analysis available alongside the original toxicity and emotion workflows. The BERT training workflow was refined with explicit data validation and reproducible configuration.",
+      "provenance": "The original project selected toxicity and emotion labels; those are different from positive/negative sentiment. Three-way sentiment analysis and the current dashboard were added during reconstruction. The original trained checkpoint and labeled datasets were unavailable, so inference uses documented public replacement models.",
+      "limitation": "Sentiment can miss context, sarcasm, and mixed opinions. Model scores are not guaranteed calibrated confidence, and no project accuracy is claimed without a labeled evaluation dataset."
+    },
+    {
+      "id": "ultimate",
+      "number": "02",
+      "title": "UltimateGameGen",
+      "category": "Web application · Project reconstruction",
+      "summary": "Less searching. More finding your next game.",
+      "description": "A Steam game-discovery experience with search, filters, and a personal library. Each query stays capped at 100 games.",
+      "tags": ["JavaScript", "Node.js", "Express", "Steam data"],
+      "url": "https://github.com/KALELIN-X/UltimateGameGen",
+      "question": "How can game discovery stay useful without loading an entire store catalog?",
+      "approach": "A Node/Express backend retrieves and caches a bounded selection of Steam games. The browser provides search, filtering, sorting, and a personal game library. The default selection uses current concurrent-player popularity, with at most 100 results for each query.",
+      "provenance": "This implementation was reconstructed from retained coursework documentation. The original coursework source was not recovered; the current application is newly rebuilt work.",
+      "limitation": "Steam data availability depends on its upstream services. Accounts and storage are designed for a local demonstration; Steam account sign-in and owned-game import are not implemented."
+    }
+  ],
+  "skillGroups": [
+    {
+      "title": "Interfaces",
+      "items": ["React", "JavaScript", "CSS"]
+    },
+    {
+      "title": "Applications & APIs",
+      "items": ["Python", "Java", "Node.js", "FastAPI", "Spring Boot"]
+    },
+    {
+      "title": "Data & delivery",
+      "items": ["PyTorch", "SQL", "MongoDB", "Git", "CI/CD"]
+    }
+  ]
+}
